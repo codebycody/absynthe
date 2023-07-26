@@ -24,7 +24,7 @@ PortSwigger
 	XSS https://portswigger.net/web-security/cross-site-scripting
 	CSRF https://portswigger.net/web-security/csrf
 	Clickjacking https://portswigger.net/web-security/clickjacking
-	CORS https://portswigger.net/web-security/cors
+	-CORS https://portswigger.net/web-security/cors
 	XXE https://portswigger.net/web-security/xxe
 	SSRF https://portswigger.net/web-security/ssrf
 	Request smuggling https://portswigger.net/web-security/request-smuggling
@@ -40,7 +40,7 @@ PortSwigger
 	DOM-based https://portswigger.net/web-security/dom-based
 	Web cache poisoning https://portswigger.net/web-security/web-cache-poisoning
 	HTTP Host header attacks https://portswigger.net/web-security/host-header
-	Information disclosure https://portswigger.net/web-security/information-disclosure
+	-Information disclosure https://portswigger.net/web-security/information-disclosure
 	File upload vulnerabilities https://portswigger.net/web-security/file-upload
 	JWT attacks https://portswigger.net/web-security/jwt
 	Essential skills https://portswigger.net/web-security/essential-skills
