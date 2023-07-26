@@ -19,3 +19,30 @@ Sections to cover in the tooling:
 	HTTP Routing
 	Introduction to Databases and SQL
 
+PortSwigger
+	SQL injection https://portswigger.net/web-security/sql-injection
+	XSS https://portswigger.net/web-security/cross-site-scripting
+	CSRF https://portswigger.net/web-security/csrf
+	Clickjacking https://portswigger.net/web-security/clickjacking
+	CORS https://portswigger.net/web-security/cors
+	XXE https://portswigger.net/web-security/xxe
+	SSRF https://portswigger.net/web-security/ssrf
+	Request smuggling https://portswigger.net/web-security/request-smuggling
+	Command injection https://portswigger.net/web-security/os-command-injection
+	Server-side template injection https://portswigger.net/web-security/server-side-template-injection
+	Insecure deserialization https://portswigger.net/web-security/deserialization
+	Directory traversal https://portswigger.net/web-security/file-path-traversal
+	Access control https://portswigger.net/web-security/access-control
+	Authentication https://portswigger.net/web-security/authentication
+	OAuth authentication https://portswigger.net/web-security/oauth
+	Business logic vulnerabilities https://portswigger.net/web-security/logic-flaws
+	WebSockets https://portswigger.net/web-security/websockets
+	DOM-based https://portswigger.net/web-security/dom-based
+	Web cache poisoning https://portswigger.net/web-security/web-cache-poisoning
+	HTTP Host header attacks https://portswigger.net/web-security/host-header
+	Information disclosure https://portswigger.net/web-security/information-disclosure
+	File upload vulnerabilities https://portswigger.net/web-security/file-upload
+	JWT attacks https://portswigger.net/web-security/jwt
+	Essential skills https://portswigger.net/web-security/essential-skills
+	Prototype pollution https://portswigger.net/web-security/prototype-pollution
+	GraphQL API vulnerabilities https://portswigger.net/web-security/graphql
