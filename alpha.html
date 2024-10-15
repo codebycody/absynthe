@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pentesting checklist</title>
+	<style>
+		.hide {
+			display: none;
+		}
+		label {
+			display: block;
+		}
+	</style>
+	<script>
+		function toggleSections() {
+			var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+			checkboxes.forEach(function(checkbox) {
+				var section = document.getElementById(checkbox.value);
+				section.style.display = checkbox.checked ? 'block' : 'none';
+			});
+		}
+	</script>
+</head>
+<body>
+	<h1>Dynamic Sections Example</h1>
+
+	<h3>Information Gathering</h3>
+	<form>
+		<label>
+			<input type="checkbox" value="information_gathering1" onchange="toggleSections()" />
+			Manually explore the site
+		</label>
+		<label>
+			<input type="checkbox" value="information_gathering2" onchange="toggleSections()" />
+			Spider/crawl for missed or hidden content
+		</label>
+		<label>
+			<input type="checkbox" value="information_gathering3" onchange="toggleSections()" />
+			Check for files that expose content, such as robots.txt, sitemap.xml
+		</label>
+		<label>
+			<input type="checkbox" value="information_gathering4" onchange="toggleSections()" />
+			Check the caches of major search engines for publicly accessible sites
+		</label>
+		<label>
+			<input type="checkbox" value="information_gathering5" onchange="toggleSections()" />
+			Check for differences in content based on User Agent (e.g. Mobile sites, access as a Search engine Crawler)
+		</label>
+		<label>
+			<input type="checkbox" value="information_gathering6" onchange="toggleSections()" />
+			Perform Web Application Fingerprinting
+		</label>
+		<label>
+			<input type="checkbox" value="information_gathering7" onchange="toggleSections()" />
+			Identify technologies used
+		</label>
+		<label>
+			<input type="checkbox" value="information_gathering8" onchange="toggleSections()" />
+			Identify user roles
+		</label>
+		<label>
+			<input type="checkbox" value="information_gathering9" onchange="toggleSections()" />
+			Identify client-side code
+		</label>
+		<label>
+			<input type="checkbox" value="information_gathering10" onchange="toggleSections()" />
+			Identify multiple versions/channels (e.g. web, mobile web, mobile app, web services)
+		</label>
+		<label>
+			<input type="checkbox" value="information_gathering11" onchange="toggleSections()" />
+			Identify co-hosting and related applications
+		</label>
+		<label>
+			<input type="checkbox" value="information_gathering12" onchange="toggleSections()" />
+			Identify all hostnames and ports
+		</label>
+		<label>
+			<input type="checkbox" value="information_gathering13" onchange="toggleSections()" />
+			Identify third-party hosted content
+		</label>
+	</form>
+	
+	<h3>Configuration Management</h3>
+	<form>
+		<label>
+			<input type="checkbox" value="configuration_management1" onchange="toggleSections()" />
+			Check for commonly used application and administrative URLs
+		</label>
+		<label>
+			<input type="checkbox" value="configuration_management2" onchange="toggleSections()" />
+			Check for old, backup and unreferenced files
+		</label>
+		<label>
+			<input type="checkbox" value="configuration_management3" onchange="toggleSections()" />
+			Check HTTP methods supported and Cross Site Tracing (XST)
+		</label>
+		<label>
+			<input type="checkbox" value="configuration_management4" onchange="toggleSections()" />
+			Test file extensions handling
+		</label>
+		<label>
+			<input type="checkbox" value="configuration_management5" onchange="toggleSections()" />
+			Test for security HTTP headers (e.g. CSP, X-Frame-Options, HSTS)
+		</label>
+		<label>
+			<input type="checkbox" value="configuration_management6" onchange="toggleSections()" />
+			Test for policies (e.g. Flash, Silverlight, robots)
+		</label>
+		<label>
+			<input type="checkbox" value="configuration_management7" onchange="toggleSections()" />
+			Test for non-production data in live environment, and vice-versa
+		</label>
+		<label>
+			<input type="checkbox" value="configuration_management8" onchange="toggleSections()" />
+			Check for sensitive data in client-side code (e.g. API keys, credentials)
+		</label>
+	</form>
+
+	<h3>Secure Transmission</h3>
+	<form>
+			<label>
+				<input type="checkbox" value="secure_transmission1" onchange="toggleSections()" />
+				Check SSL Version, Algorithms, Key length 
+			</label>
+			<label>
+				<input type="checkbox" value="secure_transmission2" onchange="toggleSections()" />
+				Check for Digital Certificate Validity (Duration, Signature and CN)
+			</label>
+			<label>
+				<input type="checkbox" value="secure_transmission3" onchange="toggleSections()" />
+				Check credentials only delivered over HTTPS
+			</label>
+			<label>
+				<input type="checkbox" value="secure_transmission4" onchange="toggleSections()" />
+				Check that the login form is delivered over HTTPS
+			</label>
+			<label>
+				<input type="checkbox" value="secure_transmission5" onchange="toggleSections()" />
+				Check session tokens only delivered over HTTPS
+			</label>
+			<label>
+				<input type="checkbox" value="secure_transmission6" onchange="toggleSections()" />
+				Check if HTTP Strict Transport Security (HSTS) in use
+			</label>
+	</form>
+
+	<h3>Authentication</h3>
+	<form>
+		<label>
+			<input type="checkbox" value="authentaication1" onchange="toggleSections()" />
+			Test for user enumeration Test
+		</label>
+		<label>
+			<input type="checkbox" value="authentaication2" onchange="toggleSections()" />
+			Test for authentication bypass
+		</label>
+		<label>
+			<input type="checkbox" value="authentaication3" onchange="toggleSections()" />
+			Test for brute force protection
+		</label>
+		<label>
+			<input type="checkbox" value="authentaication4" onchange="toggleSections()" />
+			Test remember me functionality
+		</label>
+		<label>
+			<input type="checkbox" value="authentaication5" onchange="toggleSections()" />
+			Test for auto-complete on password forms/input
+		</label>
+		<label>
+			<input type="checkbox" value="authentaication6" onchange="toggleSections()" />
+			Test password reset and/or recovery
+		</label>
+		<label>
+			<input type="checkbox" value="authentaication7" onchange="toggleSections()" />
+			Test password change process
+		</label>
+		<label>
+			<input type="checkbox" value="authentaication8" onchange="toggleSections()" />
+			Test CAPTCHA
+		</label>
+		<label>
+			<input type="checkbox" value="authentaication9" onchange="toggleSections()" />
+			Test multi factor authentication
+		</label>
+		<label>
+			<input type="checkbox" value="authentaication10" onchange="toggleSections()" />
+			Test for logout functionality presence
+		</label>
+		<label>
+			<input type="checkbox" value="authentaication11" onchange="toggleSections()" />
+			Test for cache management on HTTP (e.g. Pragma, Expires, Max-age)
+		</label>
+		<label>
+			<input type="checkbox" value="authentaication12" onchange="toggleSections()" />
+			Test for default logins
+		</label>
+		<label>
+			<input type="checkbox" value="authentaication13" onchange="toggleSections()" />
+			Test for user-accessible authentication history
+		</label>
+		<label>
+			<input type="checkbox" value="authentaication14" onchange="toggleSections()" />
+			Test for out-of channel notification of account lockouts and successful password changes
+		</label>
+		<label>
+			<input type="checkbox" value="authentaication15" onchange="toggleSections()" />
+			Test for consistent authentication across applications with shared authentication schema/SSO
+		</label>
+	</form>
+
+	<h3>Session Management</h3>
+	<form>
+		<label>
+			<input type="checkbox" value="session_management1" onchange="toggleSections()" />
+			Establish how session management is handled in the application (e.g. tokens in cookies, token in URL)
+		</label>
+		<label>
+			<input type="checkbox" value="session_management2" onchange="toggleSections()" />
+			Check session tokens for cookie flags (httpOnly and secure)
+		</label>
+		<label>
+			<input type="checkbox" value="session_management3" onchange="toggleSections()" />
+			Check session cookie scope (path and domain)
+		</label>
+		<label>
+			<input type="checkbox" value="session_management4" onchange="toggleSections()" />
+			Check session cookie duration (expires and max-age)
+		</label>
+		<label>
+			<input type="checkbox" value="session_management5" onchange="toggleSections()" />
+			Check session termination after a maximum lifetime
+		</label>
+		<label>
+			<input type="checkbox" value="session_management6" onchange="toggleSections()" />
+			Check session termination after relative timeout
+		</label>
+		<label>
+			<input type="checkbox" value="session_management7" onchange="toggleSections()" />
+			Check session termination after logout
+		</label>
+		<label>
+			<input type="checkbox" value="session_management8" onchange="toggleSections()" />
+			Test to see if users can have multiple simultaneous sessions
+		</label>
+		<label>
+			<input type="checkbox" value="session_management9" onchange="toggleSections()" />
+			Test session cookies for randomness
+		</label>
+		<label>
+			<input type="checkbox" value="session_management10" onchange="toggleSections()" />
+			Confirm that new session tokens are issued on login, role change and logout
+		</label>
+		<label>
+			<input type="checkbox" value="session_management11" onchange="toggleSections()" />
+			Test for consistent session management across applications with shared session management
+		</label>
+		<label>
+			<input type="checkbox" value="session_management12" onchange="toggleSections()" />
+			Test for session puzzling
+		</label>
+		<label>
+			<input type="checkbox" value="session_management13" onchange="toggleSections()" />
+			Test for CSRF and clickjacking
+		</label>
+	</form>	
+	
+	<h3>Authorization</h3>
+	<form>
+		<label>
+			<input type="checkbox" value="authorization1" onchange="toggleSections()" />
+			Test for path traversal
+		</label>
+		<label>
+			<input type="checkbox" value="authorization2" onchange="toggleSections()" />
+			Test for bypassing authorization schema
+		</label>
+		<label>
+			<input type="checkbox" value="authorization3" onchange="toggleSections()" />
+			Test for vertical Access control problems (a.k.a. Privilege Escalation)
+		</label>
+		<label>
+			<input type="checkbox" value="authorization4" onchange="toggleSections()" />
+			Test for horizontal Access control problems (between two users at the same privilege level)
+		</label>
+		<label>
+			<input type="checkbox" value="authorization5" onchange="toggleSections()" />
+			Test for missing authorization
+		</label>
+	</form>
+
+	<h3>Data Validation</h3>
+	<form>
+		<label>
+			<input type="checkbox" value="data_validation1" onchange="toggleSections()" />
+			Test for Reflected Cross Site Scripting
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation2" onchange="toggleSections()" />
+			Test for Stored Cross Site Scripting Test
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation3" onchange="toggleSections()" />
+			Test for DOM based Cross Site Scripting
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation4" onchange="toggleSections()" />
+			Test for Cross Site Flashing
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation5" onchange="toggleSections()" />
+			Test for HTML Injection
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation6" onchange="toggleSections()" />
+			Test for SQL Injection
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation7" onchange="toggleSections()" />
+			Test for LDAP Injection
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation8" onchange="toggleSections()" />
+			Test for ORM Injection
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation9" onchange="toggleSections()" />
+			Test for XML Injection
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation10" onchange="toggleSections()" />
+			Test for XXE Injection
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation11" onchange="toggleSections()" />
+			Test for SSI Injection
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation12" onchange="toggleSections()" />
+			Test for XPath Injection
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation13" onchange="toggleSections()" />
+			Test for XQuery Injection
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation14" onchange="toggleSections()" />
+			Test for IMAP/SMTP Injection
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation15" onchange="toggleSections()" />
+			Test for Code Injection
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation16" onchange="toggleSections()" />
+			Test for Expression Language Injection
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation17" onchange="toggleSections()" />
+			Test for Command Injection
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation18" onchange="toggleSections()" />
+			Test for Overflow (Stack, Heap and Integer)
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation19" onchange="toggleSections()" />
+			Test for incubated vulnerabilities
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation20" onchange="toggleSections()" />
+			Test for HTTP Splitting/Smuggling
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation21" onchange="toggleSections()" />
+			Test for HTTP Verb Tampering
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation22" onchange="toggleSections()" />
+			Test for Open Redirection
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation23" onchange="toggleSections()" />
+			Test for Local File Inclusion
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation24" onchange="toggleSections()" />
+			Test for Remote File Inclusion
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation25" onchange="toggleSections()" />
+			Compare client-side and sever-side validation rules
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation26" onchange="toggleSections()" />
+			Test for NoSQL Injection
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation27" onchange="toggleSections()" />
+			Test for HTTP parameter pollution
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation28" onchange="toggleSections()" />
+			Test for auto-binding
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation29" onchange="toggleSections()" />
+			Test for Mass Assignment
+		</label>
+		<label>
+			<input type="checkbox" value="data_validation30" onchange="toggleSections()" />
+			Test for NULL/Invalid Session Cookie
+		</label>
+	</form>
+
+	<h3>Denial of Service</h3>
+	<form>
+		<label>
+			<input type="checkbox" value="denial_of_service1" onchange="toggleSections()" />
+			Test for anti-automation
+		</label>
+		<label>
+			<input type="checkbox" value="denial_of_service2" onchange="toggleSections()" />
+			Test for account lockout
+		</label>
+		<label>
+			<input type="checkbox" value="denial_of_service3" onchange="toggleSections()" />
+			Test for HTTP protocol DoS
+		</label>
+		<label>
+			<input type="checkbox" value="denial_of_service4" onchange="toggleSections()" />
+			Test for SQL wildcard DoS
+		</label>
+	</form>
+
+	<h3>Business Logic</h3>
+	<form>
+		<label>
+			<input type="checkbox" value="business_logic1" onchange="toggleSections()" />
+			Test for feature misuse
+		</label>
+		<label>
+			<input type="checkbox" value="business_logic2" onchange="toggleSections()" />
+			Test for lack of non-repudiation
+		</label>
+		<label>
+			<input type="checkbox" value="business_logic3" onchange="toggleSections()" />
+			Test for trust relationships
+		</label>
+		<label>
+			<input type="checkbox" value="business_logic4" onchange="toggleSections()" />
+			Test for integrity of data
+		</label>
+		<label>
+			<input type="checkbox" value="business_logic5" onchange="toggleSections()" />
+			Test segregation of duties
+		</label>
+	</form>
+
+	<h3>Cryptography</h3>
+	<form>
+		<label>
+			<input type="checkbox" value="cryptography1" onchange="toggleSections()" />
+			Check if data which should be encrypted isn't
+		</label>
+		<label>
+			<input type="checkbox" value="cryptography2" onchange="toggleSections()" />
+			Check for wrong algorithms usage depending on context
+		</label>
+		<label>
+			<input type="checkbox" value="cryptography3" onchange="toggleSections()" />
+			Check for weak algorithms usage
+		</label>
+		<label>
+			<input type="checkbox" value="cryptography4" onchange="toggleSections()" />
+			Check for proper use of salting
+		</label>
+		<label>
+			<input type="checkbox" value="cryptography5" onchange="toggleSections()" />
+			Check for randomness functions
+		</label>
+	</form>
+
+	<h3>Risky Functionality - File Upload</h3>
+	<form>
+		<label>
+			<input type="checkbox" value="risky_functionality_file_upload1" onchange="toggleSections()" />
+			Test that file size limits, upload frequency and total file counts are defined and are enforced
+		</label>
+		<label>
+			<input type="checkbox" value="risky_functionality_file_upload2" onchange="toggleSections()" />
+			Test that file contents match the defined file type
+		</label>
+		<label>
+			<input type="checkbox" value="risky_functionality_file_upload3" onchange="toggleSections()" />
+			Test that all file uploads have Anti-Virus scanning in-place
+		</label>
+		<label>
+			<input type="checkbox" value="risky_functionality_file_upload4" onchange="toggleSections()" />
+			Test that unsafe filenames are sanitized
+		</label>
+		<label>
+			<input type="checkbox" value="risky_functionality_file_upload5" onchange="toggleSections()" />
+			Test that uploaded files are not directly accessible within the web root
+		</label>
+		<label>
+			<input type="checkbox" value="risky_functionality_file_upload6" onchange="toggleSections()" />
+			Test that uploaded files are not sever on the same hostname/port
+		</label>
+		<label>
+			<input type="checkbox" value="risky_functionality_file_upload7" onchange="toggleSections()" />
+			Test that files and other media are integrated with the authentication and authorization schemas
+		</label>
+	</form>
+
+	<h3>Risky Functionality - Card Payment</h3>
+	<form>
+		<label>
+			<input type="checkbox" value="risky_functionality_card_payment1" onchange="toggleSections()" />
+			Test for known vulnerabilities and configuration issues on Web Server and Web Application
+		</label>
+		<label>
+			<input type="checkbox" value="risky_functionality_card_payment2" onchange="toggleSections()" />
+			Test for default or guessable password
+		</label>
+		<label>
+			<input type="checkbox" value="risky_functionality_card_payment3" onchange="toggleSections()" />
+			Test for non-production data in live environment, and vice-versa
+		</label>
+		<label>
+			<input type="checkbox" value="risky_functionality_card_payment4" onchange="toggleSections()" />
+			Test for Injection vulnerabilities
+		</label>
+		<label>
+			<input type="checkbox" value="risky_functionality_card_payment5" onchange="toggleSections()" />
+			Test for Buffer Overflows
+		</label>
+		<label>
+			<input type="checkbox" value="risky_functionality_card_payment6" onchange="toggleSections()" />
+			Test for Insecure Cryptographic Storage
+		</label>
+		<label>
+			<input type="checkbox" value="risky_functionality_card_payment7" onchange="toggleSections()" />
+			Test for Insufficient Transport Layer Protection
+		</label>
+		<label>
+			<input type="checkbox" value="risky_functionality_card_payment8" onchange="toggleSections()" />
+			Test for Improper Error Handling
+		</label>
+		<label>
+			<input type="checkbox" value="risky_functionality_card_payment9" onchange="toggleSections()" />
+			Test for all vulnerabilities with a CVSS v2 score > 4.0
+		</label>
+		<label>
+			<input type="checkbox" value="risky_functionality_card_payment10" onchange="toggleSections()" />
+			Test for Authentication and Authorization issues
+		</label>
+		<label>
+			<input type="checkbox" value="risky_functionality_card_payment11" onchange="toggleSections()" />
+			Test for CSRF
+		</label>
+	</form>
+
+	<h3>HTML 5</h3>
+	<form>
+		<label>
+			<input type="checkbox" value="html_51" onchange="toggleSections()" />
+			Test Web Messaging
+		</label>
+		<label>
+			<input type="checkbox" value="html_52" onchange="toggleSections()" />
+			Test for Web Storage SQL injection
+		</label>
+		<label>
+			<input type="checkbox" value="html_53" onchange="toggleSections()" />
+			Check CORS implementation
+		</label>
+		<label>
+			<input type="checkbox" value="html_54" onchange="toggleSections()" />
+			Check Offline Web Application
+		</label>
+	</form>
+
+	<section><!-- Sections holding all the checkbox sections -->
+		<div id="information_gathering1" class="hide">
+			<h2>Sectioninformation_gathering1info gathering</h2>
+			<p>This is the content of Sectioninformation_gathering1 of information gathering.</p>
+		</div>
+		<div id="information_gathering2" class="hide">
+			<h2>Sectioninformation_gathering2info gathering</h2>
+			<p>This is the content of Sectioninformation_gathering2 of information gathering.</p>
+		</div>
+		<div id="information_gathering3" class="hide">
+			<h2>Sectioninformation_gathering3info gathering</h2>
+			<p>This is the content of Sectioninformation_gathering3 of information gathering.</p>
+		</div>
+		<div id="information_gathering4" class="hide">
+			<h2>Sectioninformation_gathering4info gathering</h2>
+			<p>This is the content of Sectioninformation_gathering4 of information gathering.</p>
+		</div>
+		<div id="information_gathering5" class="hide">
+			<h2>Sectioninformation_gathering5info gathering</h2>
+			<p>This is the content of Sectioninformation_gathering5 of information gathering.</p>
+		</div>
+		<div id="information_gathering6" class="hide">
+			<h2>Sectioninformation_gathering6info gathering</h2>
+			<p>This is the content of Sectioninformation_gathering6 of information gathering.</p>
+		</div>
+		<div id="information_gathering7" class="hide">
+			<h2>Sectioninformation_gathering7info gathering</h2>
+			<p>This is the content of Sectioninformation_gathering7 of information gathering.</p>
+		</div>
+		<div id="information_gathering8" class="hide">
+			<h2>Sectioninformation_gathering8info gathering</h2>
+			<p>This is the content of Sectioninformation_gathering8 of information gathering.</p>
+		</div>
+		<div id="information_gathering9" class="hide">
+			<h2>Sectioninformation_gathering9info gathering</h2>
+			<p>This is the content of Sectioninformation_gathering9 of information gathering.</p>
+		</div>
+		<div id="information_gathering10" class="hide">
+			<h2>Sectioninformation_gathering10info gathering</h2>
+			<p>This is the content of Sectioninformation_gathering10 of information gathering.</p>
+		</div>
+		<div id="information_gathering11" class="hide">
+			<h2>Sectioninformation_gathering11info gathering</h2>
+			<p>This is the content of Sectioninformation_gathering11 of information gathering.</p>
+		</div>
+		<div id="information_gathering12" class="hide">
+			<h2>Sectioninformation_gathering12info gathering</h2>
+			<p>This is the content of Sectioninformation_gathering12 of information gathering.</p>
+		</div>
+		<div id="information_gathering13" class="hide">
+			<h2>Sectioninformation_gathering13info gathering</h2>
+			<p>This is the content of Sectioninformation_gathering13 of information gathering.</p>
+		</div>
+		<div id="configuration_management1" class="hide">
+			<h2>Sectionconfiguration_management1info gathering</h2>
+			<p>This is the content of Sectionconfiguration_management1 of information gathering.</p>
+		</div>
+		<div id="configuration_management2" class="hide">
+			<h2>Sectionconfiguration_management2info gathering</h2>
+			<p>This is the content of Sectionconfiguration_management2 of information gathering.</p>
+		</div>
+		<div id="configuration_management3" class="hide">
+			<h2>Sectionconfiguration_management3info gathering</h2>
+			<p>This is the content of Sectionconfiguration_management3 of information gathering.</p>
+		</div>
+		<div id="configuration_management4" class="hide">
+			<h2>Sectionconfiguration_management4info gathering</h2>
+			<p>This is the content of Sectionconfiguration_management4 of information gathering.</p>
+		</div>
+		<div id="configuration_management5" class="hide">
+			<h2>Sectionconfiguration_management5info gathering</h2>
+			<p>This is the content of Sectionconfiguration_management5 of information gathering.</p>
+		</div>
+		<div id="configuration_management6" class="hide">
+			<h2>Sectionconfiguration_management6info gathering</h2>
+			<p>This is the content of Sectionconfiguration_management6 of information gathering.</p>
+		</div>
+		<div id="configuration_management7" class="hide">
+			<h2>Sectionconfiguration_management7info gathering</h2>
+			<p>This is the content of Sectionconfiguration_management7 of information gathering.</p>
+		</div>
+		<div id="configuration_management8" class="hide">
+			<h2>Sectionconfiguration_management8info gathering</h2>
+			<p>This is the content of Sectionconfiguration_management8 of information gathering.</p>
+		</div>
+		<div id="secure_transmission1" class="hide">
+			<h2>Sectionsecure_transmission1info gathering</h2>
+			<p>This is the content of Sectionsecure_transmission1 of information gathering.</p>
+		</div>
+		<div id="secure_transmission2" class="hide">
+			<h2>Sectionsecure_transmission2info gathering</h2>
+			<p>This is the content of Sectionsecure_transmission2 of information gathering.</p>
+		</div>
+		<div id="secure_transmission3" class="hide">
+			<h2>Sectionsecure_transmission3info gathering</h2>
+			<p>This is the content of Sectionsecure_transmission3 of information gathering.</p>
+		</div>
+		<div id="secure_transmission4" class="hide">
+			<h2>Sectionsecure_transmission4info gathering</h2>
+			<p>This is the content of Sectionsecure_transmission4 of information gathering.</p>
+		</div>
+		<div id="secure_transmission5" class="hide">
+			<h2>Sectionsecure_transmission5info gathering</h2>
+			<p>This is the content of Sectionsecure_transmission5 of information gathering.</p>
+		</div>
+		<div id="secure_transmission6" class="hide">
+			<h2>Sectionsecure_transmission6info gathering</h2>
+			<p>This is the content of Sectionsecure_transmission6 of information gathering.</p>
+		</div>
+		<div id="authentaication1" class="hide">
+			<h2>Sectionauthentaication1info gathering</h2>
+			<p>This is the content of Sectionauthentaication1 of information gathering.</p>
+		</div>
+		<div id="authentaication2" class="hide">
+			<h2>Sectionauthentaication2info gathering</h2>
+			<p>This is the content of Sectionauthentaication2 of information gathering.</p>
+		</div>
+		<div id="authentaication3" class="hide">
+			<h2>Sectionauthentaication3info gathering</h2>
+			<p>This is the content of Sectionauthentaication3 of information gathering.</p>
+		</div>
+		<div id="authentaication4" class="hide">
+			<h2>Sectionauthentaication4info gathering</h2>
+			<p>This is the content of Sectionauthentaication4 of information gathering.</p>
+		</div>
+		<div id="authentaication5" class="hide">
+			<h2>Sectionauthentaication5info gathering</h2>
+			<p>This is the content of Sectionauthentaication5 of information gathering.</p>
+		</div>
+		<div id="authentaication6" class="hide">
+			<h2>Sectionauthentaication6info gathering</h2>
+			<p>This is the content of Sectionauthentaication6 of information gathering.</p>
+		</div>
+		<div id="authentaication7" class="hide">
+			<h2>Sectionauthentaication7info gathering</h2>
+			<p>This is the content of Sectionauthentaication7 of information gathering.</p>
+		</div>
+		<div id="authentaication8" class="hide">
+			<h2>Sectionauthentaication8info gathering</h2>
+			<p>This is the content of Sectionauthentaication8 of information gathering.</p>
+		</div>
+		<div id="authentaication9" class="hide">
+			<h2>Sectionauthentaication9info gathering</h2>
+			<p>This is the content of Sectionauthentaication9 of information gathering.</p>
+		</div>
+		<div id="authentaication10" class="hide">
+			<h2>Sectionauthentaication10info gathering</h2>
+			<p>This is the content of Sectionauthentaication10 of information gathering.</p>
+		</div>
+		<div id="authentaication11" class="hide">
+			<h2>Sectionauthentaication11info gathering</h2>
+			<p>This is the content of Sectionauthentaication11 of information gathering.</p>
+		</div>
+		<div id="authentaication12" class="hide">
+			<h2>Sectionauthentaication12info gathering</h2>
+			<p>This is the content of Sectionauthentaication12 of information gathering.</p>
+		</div>
+		<div id="authentaication13" class="hide">
+			<h2>Sectionauthentaication13info gathering</h2>
+			<p>This is the content of Sectionauthentaication13 of information gathering.</p>
+		</div>
+		<div id="authentaication14" class="hide">
+			<h2>Sectionauthentaication14info gathering</h2>
+			<p>This is the content of Sectionauthentaication14 of information gathering.</p>
+		</div>
+		<div id="authentaication15" class="hide">
+			<h2>Sectionauthentaication15info gathering</h2>
+			<p>This is the content of Sectionauthentaication15 of information gathering.</p>
+		</div>
+		<div id="session_management1" class="hide">
+			<h2>Sectionsession_management1info gathering</h2>
+			<p>This is the content of Sectionsession_management1 of information gathering.</p>
+		</div>
+		<div id="session_management2" class="hide">
+			<h2>Sectionsession_management2info gathering</h2>
+			<p>This is the content of Sectionsession_management2 of information gathering.</p>
+		</div>
+		<div id="session_management3" class="hide">
+			<h2>Sectionsession_management3info gathering</h2>
+			<p>This is the content of Sectionsession_management3 of information gathering.</p>
+		</div>
+		<div id="session_management4" class="hide">
+			<h2>Sectionsession_management4info gathering</h2>
+			<p>This is the content of Sectionsession_management4 of information gathering.</p>
+		</div>
+		<div id="session_management5" class="hide">
+			<h2>Sectionsession_management5info gathering</h2>
+			<p>This is the content of Sectionsession_management5 of information gathering.</p>
+		</div>
+		<div id="session_management6" class="hide">
+			<h2>Sectionsession_management6info gathering</h2>
+			<p>This is the content of Sectionsession_management6 of information gathering.</p>
+		</div>
+		<div id="session_management7" class="hide">
+			<h2>Sectionsession_management7info gathering</h2>
+			<p>This is the content of Sectionsession_management7 of information gathering.</p>
+		</div>
+		<div id="session_management8" class="hide">
+			<h2>Sectionsession_management8info gathering</h2>
+			<p>This is the content of Sectionsession_management8 of information gathering.</p>
+		</div>
+		<div id="session_management9" class="hide">
+			<h2>Sectionsession_management9info gathering</h2>
+			<p>This is the content of Sectionsession_management9 of information gathering.</p>
+		</div>
+		<div id="session_management10" class="hide">
+			<h2>Sectionsession_management10info gathering</h2>
+			<p>This is the content of Sectionsession_management10 of information gathering.</p>
+		</div>
+		<div id="session_management11" class="hide">
+			<h2>Sectionsession_management11info gathering</h2>
+			<p>This is the content of Sectionsession_management11 of information gathering.</p>
+		</div>
+		<div id="session_management12" class="hide">
+			<h2>Sectionsession_management12info gathering</h2>
+			<p>This is the content of Sectionsession_management12 of information gathering.</p>
+		</div>
+		<div id="session_management13" class="hide">
+			<h2>Sectionsession_management13info gathering</h2>
+			<p>This is the content of Sectionsession_management13 of information gathering.</p>
+		</div>
+		<div id="authorization1" class="hide">
+			<h2>Sectionauthorization1info gathering</h2>
+			<p>This is the content of Sectionauthorization1 of information gathering.</p>
+		</div>
+		<div id="authorization2" class="hide">
+			<h2>Sectionauthorization2info gathering</h2>
+			<p>This is the content of Sectionauthorization2 of information gathering.</p>
+		</div>
+		<div id="authorization3" class="hide">
+			<h2>Sectionauthorization3info gathering</h2>
+			<p>This is the content of Sectionauthorization3 of information gathering.</p>
+		</div>
+		<div id="authorization4" class="hide">
+			<h2>Sectionauthorization4info gathering</h2>
+			<p>This is the content of Sectionauthorization4 of information gathering.</p>
+		</div>
+		<div id="authorization5" class="hide">
+			<h2>Sectionauthorization5info gathering</h2>
+			<p>This is the content of Sectionauthorization5 of information gathering.</p>
+		</div>
+		<div id="data_validation1" class="hide">
+			<h2>Sectiondata_validation1info gathering</h2>
+			<p>This is the content of Sectiondata_validation1 of information gathering.</p>
+		</div>
+		<div id="data_validation2" class="hide">
+			<h2>Sectiondata_validation2info gathering</h2>
+			<p>This is the content of Sectiondata_validation2 of information gathering.</p>
+		</div>
+		<div id="data_validation3" class="hide">
+			<h2>Sectiondata_validation3info gathering</h2>
+			<p>This is the content of Sectiondata_validation3 of information gathering.</p>
+		</div>
+		<div id="data_validation4" class="hide">
+			<h2>Sectiondata_validation4info gathering</h2>
+			<p>This is the content of Sectiondata_validation4 of information gathering.</p>
+		</div>
+		<div id="data_validation5" class="hide">
+			<h2>Sectiondata_validation5info gathering</h2>
+			<p>This is the content of Sectiondata_validation5 of information gathering.</p>
+		</div>
+		<div id="data_validation6" class="hide">
+			<h2>Sectiondata_validation6info gathering</h2>
+			<p>This is the content of Sectiondata_validation6 of information gathering.</p>
+		</div>
+		<div id="data_validation7" class="hide">
+			<h2>Sectiondata_validation7info gathering</h2>
+			<p>This is the content of Sectiondata_validation7 of information gathering.</p>
+		</div>
+		<div id="data_validation8" class="hide">
+			<h2>Sectiondata_validation8info gathering</h2>
+			<p>This is the content of Sectiondata_validation8 of information gathering.</p>
+		</div>
+		<div id="data_validation9" class="hide">
+			<h2>Sectiondata_validation9info gathering</h2>
+			<p>This is the content of Sectiondata_validation9 of information gathering.</p>
+		</div>
+		<div id="data_validation10" class="hide">
+			<h2>Sectiondata_validation10info gathering</h2>
+			<p>This is the content of Sectiondata_validation10 of information gathering.</p>
+		</div>
+		<div id="data_validation11" class="hide">
+			<h2>Sectiondata_validation11info gathering</h2>
+			<p>This is the content of Sectiondata_validation11 of information gathering.</p>
+		</div>
+		<div id="data_validation12" class="hide">
+			<h2>Sectiondata_validation12info gathering</h2>
+			<p>This is the content of Sectiondata_validation12 of information gathering.</p>
+		</div>
+		<div id="data_validation13" class="hide">
+			<h2>Sectiondata_validation13info gathering</h2>
+			<p>This is the content of Sectiondata_validation13 of information gathering.</p>
+		</div>
+		<div id="data_validation14" class="hide">
+			<h2>Sectiondata_validation14info gathering</h2>
+			<p>This is the content of Sectiondata_validation14 of information gathering.</p>
+		</div>
+		<div id="data_validation15" class="hide">
+			<h2>Sectiondata_validation15info gathering</h2>
+			<p>This is the content of Sectiondata_validation15 of information gathering.</p>
+		</div>
+		<div id="data_validation16" class="hide">
+			<h2>Sectiondata_validation16info gathering</h2>
+			<p>This is the content of Sectiondata_validation16 of information gathering.</p>
+		</div>
+		<div id="data_validation17" class="hide">
+			<h2>Sectiondata_validation17info gathering</h2>
+			<p>This is the content of Sectiondata_validation17 of information gathering.</p>
+		</div>
+		<div id="data_validation18" class="hide">
+			<h2>Sectiondata_validation18info gathering</h2>
+			<p>This is the content of Sectiondata_validation18 of information gathering.</p>
+		</div>
+		<div id="data_validation19" class="hide">
+			<h2>Sectiondata_validation19info gathering</h2>
+			<p>This is the content of Sectiondata_validation19 of information gathering.</p>
+		</div>
+		<div id="data_validation20" class="hide">
+			<h2>Sectiondata_validation20info gathering</h2>
+			<p>This is the content of Sectiondata_validation20 of information gathering.</p>
+		</div>
+		<div id="data_validation21" class="hide">
+			<h2>Sectiondata_validation21info gathering</h2>
+			<p>This is the content of Sectiondata_validation21 of information gathering.</p>
+		</div>
+		<div id="data_validation22" class="hide">
+			<h2>Sectiondata_validation22info gathering</h2>
+			<p>This is the content of Sectiondata_validation22 of information gathering.</p>
+		</div>
+		<div id="data_validation23" class="hide">
+			<h2>Sectiondata_validation23info gathering</h2>
+			<p>This is the content of Sectiondata_validation23 of information gathering.</p>
+		</div>
+		<div id="data_validation24" class="hide">
+			<h2>Sectiondata_validation24info gathering</h2>
+			<p>This is the content of Sectiondata_validation24 of information gathering.</p>
+		</div>
+		<div id="data_validation25" class="hide">
+			<h2>Sectiondata_validation25info gathering</h2>
+			<p>This is the content of Sectiondata_validation25 of information gathering.</p>
+		</div>
+		<div id="data_validation26" class="hide">
+			<h2>Sectiondata_validation26info gathering</h2>
+			<p>This is the content of Sectiondata_validation26 of information gathering.</p>
+		</div>
+		<div id="data_validation27" class="hide">
+			<h2>Sectiondata_validation27info gathering</h2>
+			<p>This is the content of Sectiondata_validation27 of information gathering.</p>
+		</div>
+		<div id="data_validation28" class="hide">
+			<h2>Sectiondata_validation28info gathering</h2>
+			<p>This is the content of Sectiondata_validation28 of information gathering.</p>
+		</div>
+		<div id="data_validation29" class="hide">
+			<h2>Sectiondata_validation29info gathering</h2>
+			<p>This is the content of Sectiondata_validation29 of information gathering.</p>
+		</div>
+		<div id="data_validation30" class="hide">
+			<h2>Sectiondata_validation30info gathering</h2>
+			<p>This is the content of Sectiondata_validation30 of information gathering.</p>
+		</div>
+		<div id="denial_of_service1" class="hide">
+			<h2>Sectiondenial_of_service1info gathering</h2>
+			<p>This is the content of Sectiondenial_of_service1 of information gathering.</p>
+		</div>
+		<div id="denial_of_service2" class="hide">
+			<h2>Sectiondenial_of_service2info gathering</h2>
+			<p>This is the content of Sectiondenial_of_service2 of information gathering.</p>
+		</div>
+		<div id="denial_of_service3" class="hide">
+			<h2>Sectiondenial_of_service3info gathering</h2>
+			<p>This is the content of Sectiondenial_of_service3 of information gathering.</p>
+		</div>
+		<div id="denial_of_service4" class="hide">
+			<h2>Sectiondenial_of_service4info gathering</h2>
+			<p>This is the content of Sectiondenial_of_service4 of information gathering.</p>
+		</div>
+		<div id="business_logic1" class="hide">
+			<h2>Sectionbusiness_logic1info gathering</h2>
+			<p>This is the content of Sectionbusiness_logic1 of information gathering.</p>
+		</div>
+		<div id="business_logic2" class="hide">
+			<h2>Sectionbusiness_logic2info gathering</h2>
+			<p>This is the content of Sectionbusiness_logic2 of information gathering.</p>
+		</div>
+		<div id="business_logic3" class="hide">
+			<h2>Sectionbusiness_logic3info gathering</h2>
+			<p>This is the content of Sectionbusiness_logic3 of information gathering.</p>
+		</div>
+		<div id="business_logic4" class="hide">
+			<h2>Sectionbusiness_logic4info gathering</h2>
+			<p>This is the content of Sectionbusiness_logic4 of information gathering.</p>
+		</div>
+		<div id="business_logic5" class="hide">
+			<h2>Sectionbusiness_logic5info gathering</h2>
+			<p>This is the content of Sectionbusiness_logic5 of information gathering.</p>
+		</div>
+		<div id="cryptography1" class="hide">
+			<h2>Sectioncryptography1info gathering</h2>
+			<p>This is the content of Sectioncryptography1 of information gathering.</p>
+		</div>
+		<div id="cryptography2" class="hide">
+			<h2>Sectioncryptography2info gathering</h2>
+			<p>This is the content of Sectioncryptography2 of information gathering.</p>
+		</div>
+		<div id="cryptography3" class="hide">
+			<h2>Sectioncryptography3info gathering</h2>
+			<p>This is the content of Sectioncryptography3 of information gathering.</p>
+		</div>
+		<div id="cryptography4" class="hide">
+			<h2>Sectioncryptography4info gathering</h2>
+			<p>This is the content of Sectioncryptography4 of information gathering.</p>
+		</div>
+		<div id="cryptography5" class="hide">
+			<h2>Sectioncryptography5info gathering</h2>
+			<p>This is the content of Sectioncryptography5 of information gathering.</p>
+		</div>
+		<div id="risky_functionality_file_upload1" class="hide">
+			<h2>Sectionrisky_functionality_file_upload1info gathering</h2>
+			<p>This is the content of Sectionrisky_functionality_file_upload1 of information gathering.</p>
+		</div>
+		<div id="risky_functionality_file_upload2" class="hide">
+			<h2>Sectionrisky_functionality_file_upload2info gathering</h2>
+			<p>This is the content of Sectionrisky_functionality_file_upload2 of information gathering.</p>
+		</div>
+		<div id="risky_functionality_file_upload3" class="hide">
+			<h2>Sectionrisky_functionality_file_upload3info gathering</h2>
+			<p>This is the content of Sectionrisky_functionality_file_upload3 of information gathering.</p>
+		</div>
+		<div id="risky_functionality_file_upload4" class="hide">
+			<h2>Sectionrisky_functionality_file_upload4info gathering</h2>
+			<p>This is the content of Sectionrisky_functionality_file_upload4 of information gathering.</p>
+		</div>
+		<div id="risky_functionality_file_upload5" class="hide">
+			<h2>Sectionrisky_functionality_file_upload5info gathering</h2>
+			<p>This is the content of Sectionrisky_functionality_file_upload5 of information gathering.</p>
+		</div>
+		<div id="risky_functionality_file_upload6" class="hide">
+			<h2>Sectionrisky_functionality_file_upload6info gathering</h2>
+			<p>This is the content of Sectionrisky_functionality_file_upload6 of information gathering.</p>
+		</div>
+		<div id="risky_functionality_file_upload7" class="hide">
+			<h2>Sectionrisky_functionality_file_upload7info gathering</h2>
+			<p>This is the content of Sectionrisky_functionality_file_upload7 of information gathering.</p>
+		</div>
+		<div id="risky_functionality_card_payment1" class="hide">
+			<h2>Sectionrisky_functionality_card_payment1info gathering</h2>
+			<p>This is the content of Sectionrisky_functionality_card_payment1 of information gathering.</p>
+		</div>
+		<div id="risky_functionality_card_payment2" class="hide">
+			<h2>Sectionrisky_functionality_card_payment2info gathering</h2>
+			<p>This is the content of Sectionrisky_functionality_card_payment2 of information gathering.</p>
+		</div>
+		<div id="risky_functionality_card_payment3" class="hide">
+			<h2>Sectionrisky_functionality_card_payment3info gathering</h2>
+			<p>This is the content of Sectionrisky_functionality_card_payment3 of information gathering.</p>
+		</div>
+		<div id="risky_functionality_card_payment4" class="hide">
+			<h2>Sectionrisky_functionality_card_payment4info gathering</h2>
+			<p>This is the content of Sectionrisky_functionality_card_payment4 of information gathering.</p>
+		</div>
+		<div id="risky_functionality_card_payment5" class="hide">
+			<h2>Sectionrisky_functionality_card_payment5info gathering</h2>
+			<p>This is the content of Sectionrisky_functionality_card_payment5 of information gathering.</p>
+		</div>
+		<div id="risky_functionality_card_payment6" class="hide">
+			<h2>Sectionrisky_functionality_card_payment6info gathering</h2>
+			<p>This is the content of Sectionrisky_functionality_card_payment6 of information gathering.</p>
+		</div>
+		<div id="risky_functionality_card_payment7" class="hide">
+			<h2>Sectionrisky_functionality_card_payment7info gathering</h2>
+			<p>This is the content of Sectionrisky_functionality_card_payment7 of information gathering.</p>
+		</div>
+		<div id="risky_functionality_card_payment8" class="hide">
+			<h2>Sectionrisky_functionality_card_payment8info gathering</h2>
+			<p>This is the content of Sectionrisky_functionality_card_payment8 of information gathering.</p>
+		</div>
+		<div id="risky_functionality_card_payment9" class="hide">
+			<h2>Sectionrisky_functionality_card_payment9info gathering</h2>
+			<p>This is the content of Sectionrisky_functionality_card_payment9 of information gathering.</p>
+		</div>
+		<div id="risky_functionality_card_payment10" class="hide">
+			<h2>Sectionrisky_functionality_card_payment10info gathering</h2>
+			<p>This is the content of Sectionrisky_functionality_card_payment10 of information gathering.</p>
+		</div>
+		<div id="risky_functionality_card_payment11" class="hide">
+			<h2>Sectionrisky_functionality_card_payment11info gathering</h2>
+			<p>This is the content of Sectionrisky_functionality_card_payment11 of information gathering.</p>
+		</div>
+		<div id="html_51" class="hide">
+			<h2>Sectionhtml_51info gathering</h2>
+			<p>This is the content of Sectionhtml_51 of information gathering.</p>
+		</div>
+		<div id="html_52" class="hide">
+			<h2>Sectionhtml_52info gathering</h2>
+			<p>This is the content of Sectionhtml_52 of information gathering.</p>
+		</div>
+		<div id="html_53" class="hide">
+			<h2>Sectionhtml_53info gathering</h2>
+			<p>This is the content of Sectionhtml_53 of information gathering.</p>
+		</div>
+		<div id="html_54" class="hide">
+			<h2>Sectionhtml_54info gathering</h2>
+			<p>This is the content of Sectionhtml_54 of information gathering.</p>
+		</div>
+	</section>
+</body>
+</html>
